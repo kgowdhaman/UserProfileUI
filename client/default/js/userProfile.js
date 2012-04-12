@@ -25,7 +25,11 @@ function saveProfile()
 				{
 					if( data.success === true )
 					{
-					
+						showConfirmationDialog(
+							'Oops!',
+							'<p>' + message + '</p>',
+							'Ok'
+						);
 					}
 					else
 					{
@@ -60,17 +64,14 @@ function getUserProfileByPN()
 {
 	personalNumber = $("#personalNumber").val();
 	$.ajax({
-			url: apiURL + "getUserProfile",
-			type: 'get',
+			url: apiURL + "getUserProfileByPN",
+			type: 'post',
 			dataType: 'json',
 			data: JSON.stringify({personalNumber:personalNumber}),
 			contentType: 'application/json',
 			success: loadProfile,
 			error:function(data, text, xhr)
 			{
-				alert(data);
-				alert(text);
-				alert(xhr);
 				onError(data, text, xhr);
 			}
 		});
@@ -94,7 +95,7 @@ function onError(data, text, xhr)
 
 function showConfirmationDialog( title, content, okText, okFnc, okFncArgs, cancelText, cancelFnc, cancelFncArgs )
 {
-	$('#displayError').html(content);
+	$('#displayMessage').html(content);
 }
 
 
