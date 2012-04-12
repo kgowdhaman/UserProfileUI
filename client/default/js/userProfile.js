@@ -6,15 +6,16 @@ var level = "";
 var ceLevel = "";
 var skills = "";
 var email = "";
+var searchPersonalNumber = "";
 
-function getUserProfileByPN()
+function searchPersonalNumber()
 {
-	personalNumber = $("#personalNumber").val();
+	searchPersonalNumber = $("#searchPersonalNumber").val();
 	$.ajax({
 			url: apiURL + "getUserProfileByPN",
 			type: 'post',
 			dataType: 'json',
-			data: JSON.stringify({personalNumber:personalNumber}),
+			data: JSON.stringify({personalNumber:searchPersonalNumber}),
 			contentType: 'application/json',
 			success: function (data)
 			{
@@ -95,5 +96,6 @@ function displayError( message )
 
 function showConfirmationDialog( title, content, okText, okFnc, okFncArgs, cancelText, cancelFnc, cancelFncArgs )
 {
-	$('#displayMessage').html(content);
+	//$('#displayMessage').html(content);
+	document.getElementById('displayMessage').innerHTML = content;
 }
