@@ -8,7 +8,7 @@ var skills = "";
 var email = "";
 var searchPersonalNumber = "";
 
-function searchPersonalNumber()
+function getUserProfileByPN()
 {
 	searchPersonalNumber = $("#searchPersonalNumber").val();
 	$.ajax({
