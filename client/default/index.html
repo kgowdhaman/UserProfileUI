@@ -13,31 +13,56 @@
 		<script src="config.js" type="text/javascript"></script>
 	</head>
 	<body id="content">
+		<BR>
+		UserProfile
 		<div id="wrapper">
-			Personal Number:
-			<input type="number" id="personalNumber" min="20000" max="50000" value="20000"/>
-			First Name:
-			<input type="text" id="firstName" value="" />
-			Last Name:
-			<input type="text" id="lastName" value="" />
-			Level:
-			<input type="text" id="level" value="" />
-			CE Level:
-			<input type="text" id="ceLevel" value="" />
-			Skills:
-			<input type="text" id="skills" value="" />
-			Email:
-			<input type="email" id="email"/>
-			<input type="button" value="Save" onclick="saveProfile();"/>
+			<table>
+				<BR>
+				<tr>
+					<td>Personal Number: </td>
+					<td><input type="number" id="personalNumber" min="20000" max="50000" value="20000"/></td>
+				</tr>
+				<tr>
+					<td align="right">First Name: </td>
+					<td><input type="text" id="firstName" value="" /></td>
+				</tr>	
+				<tr>
+					<td align="right">Last Name: </td>
+					<td><input type="text" id="lastName" value="" /></td>
+				</tr>	
+				<tr>
+					<td align="right">Level: </td>
+					<td><input type="text" id="level" value="" /></td>
+				</tr>	
+				<tr>
+					<td align="right">CE Level: </td>
+					<td><input type="text" id="ceLevel" value="" /></td>
+				</tr>	
+				<tr>
+					<td align="right">Skills: </td>
+					<td><input type="text" id="skills" value="" /></td>
+				</tr>	
+				<tr>
+					<td align="right">Email: </td>
+					<td><input type="email" id="email"/></td>
+				</tr>
+					<td>&nbsp;</td>
+					<td align="right"><input type="button" value="Save" onclick="saveProfile();"/></td>
+				</tr>
+			<table>		
 		</div>
 		<div>
 			<table>
+				<BR>
 				<tr>
-					<td>Personal Number:</td>
+					<td>Personal Number: </td>
 					<td><input type="text" name="personalNumber" id="personalNumber"/></td>
-					<td><button title="GetUserProfile" label="GetUserProfile" onclick="getUserProfileByPN();">GetUserProfile</button></td>
 				</tr>
-			</table>
+				<tr>
+					<td>&nbsp;</td>
+					<td align="right"><button title="Search" label="Search" onclick="getUserProfileByPN();">Search</button></td>
+				</tr>	
+			<table>	
 		</div>
 		<div id="displayMessage"></div>
 		<script src="js/userProfile.js"></script>
