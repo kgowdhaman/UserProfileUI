@@ -69,7 +69,23 @@ function getUserProfileByPN()
 			dataType: 'json',
 			data: JSON.stringify({personalNumber:personalNumber}),
 			contentType: 'application/json',
-			success: loadProfile,
+			success: function (data)
+			{
+				if( data.success === true )
+				{
+					$("#personalNumber").val(data.personalNumber);
+					$("#firstName").val(data.firstName);
+					$("#lastName").val(data.lastName);
+					$("#level").val(data.level);
+					$("#ceLevel").val(data.ceLevel);
+					$("#skills").val(data.skills);
+					$("#email").val(data.email);
+				}
+				else
+				{
+					displayError( data.message );
+				}
+			},
 			error:function(data, text, xhr)
 			{
 				onError(data, text, xhr);
